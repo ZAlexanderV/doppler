@@ -141,7 +141,7 @@ class LookupModule(LookupBase):
             self._display.vvv(f"Param {name} not avaible,default to env variable")
             if env_var is None:
                 env_var = f"DOPPLER_{name.upper()}"
-            val = os.environ(env_var)
+            val = os.environ.get(env_var)
             return val
 
     def validate(self, params):
